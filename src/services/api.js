@@ -1,4 +1,3 @@
-// import axios from 'axios';
 const BASE_URL = `https://api.themoviedb.org/3`;
 const API_KEY = `d18b4a9f72261e134a57a36252f3e89a`;
 export const BASE_URL_IMAGE = `https://image.tmdb.org/t/p/w500`;
@@ -36,27 +35,5 @@ export const MoviesAPI = {
     return await response.json();
   },
 };
-
-// const API_KEY = `177f9a94bc6cffceeb45ffe96a6de0f1`;
-
-// const JSON_PLACEHOLDER_BASE_URL = 'https://jsonplaceholder.typicode.com';
-
-// export const fetchPosts = async () => {
-//   const { data } = await axios.get(`${JSON_PLACEHOLDER_BASE_URL}/posts`);
-//   return data;
-// };
-
-// export const fetchPostDetails = async postId => {
-//   const { data } = await axios.get(
-//     `${JSON_PLACEHOLDER_BASE_URL}/posts/${postId}`
-//   );
-//   return data;
-// };
-
-// export const fetchPostComments = async postId => {
-//   const { data } = await axios.get(
-//     `${JSON_PLACEHOLDER_BASE_URL}/posts/${postId}/comments`
-//   );
-//   return data;
-// };
-// MoviesAPI.fetchMovies
+//API KEY
+//d18b4a9f72261e134a57a36252f3e89a

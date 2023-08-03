@@ -2,11 +2,6 @@ import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import Layout from './Layout';
-// import Home from '../pages/Home';
-// import Movies from '../pages/Movies';
-// import MovieDetails from './MovieDetails';
-// import Cast from './Cast';
-// import Reviews from './Reviews';
 
 const Home = lazy(() => import('../pages/Home'));
 const Movies = lazy(() => import('../pages/Movies'));
@@ -26,12 +21,8 @@ export const App = () => {
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>
-        {/* </Route> */}
         <Route path="*" element={<h1>Page Not Found</h1>} />
       </Routes>
     </div>
   );
 };
-
-//API KEY
-//d18b4a9f72261e134a57a36252f3e89a
