@@ -15,7 +15,6 @@ const MovieDetails = () => {
       try {
         const data = await MoviesAPI.fetchMovieById(movieId);
         setData(data);
-        console.log('response fetchMovieById', data);
       } catch (err) {
         console.error(err);
       }
@@ -45,10 +44,14 @@ const MovieDetails = () => {
         <p>Additional information</p>
         <ul>
           <li>
-            <Link to="cast">cast</Link>
+            <Link to="cast" state={{ from: location.state?.from }}>
+              cast
+            </Link>
           </li>
           <li>
-            <Link to="reviews">reviews</Link>
+            <Link to="reviews" state={{ from: location.state?.from }}>
+              reviews
+            </Link>
           </li>
         </ul>
         <hr />
