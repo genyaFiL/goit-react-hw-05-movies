@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useState } from 'react';
-import { Link, Outlet, useSearchParams } from 'react-router-dom';
+import { Link, Outlet, useLocation, useSearchParams } from 'react-router-dom';
 import { MoviesAPI } from 'services/api';
 
 const Movies = () => {
@@ -20,21 +20,23 @@ const Movies = () => {
     fetchMovieBySearchData();
   }, [query]);
 
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({ searchValue: '' });
 
   const handleSubmit = e => {
     e.preventDefault();
-    setSearchParams({ query: formData.searchValue });
+    formData.searchValue === ''
+      ? setSearchParams({})
+      : setSearchParams({ query: formData.searchValue });
   };
 
   const handleSearchTermChange = ({ target: { value, name } }) => {
     setFormData({ ...formData, [name]: value });
   };
-
+  const location = useLocation();
   return (
     <>
       <h2>Movies page</h2>
-      <Suspense fallback={<div>Loading subpage...</div>}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
       <form onSubmit={handleSubmit}>
@@ -57,7 +59,9 @@ const Movies = () => {
           ({ id, title }) =>
             title && (
               <li key={id}>
-                <Link to={`/movies/${id}`}>{title}</Link>
+                <Link to={`/movies/${id}`} state={{ from: location }}>
+                  {title}
+                </Link>
               </li>
             )
         )}

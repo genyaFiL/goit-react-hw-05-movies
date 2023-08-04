@@ -5,16 +5,13 @@ import { MoviesAPI } from 'services/api';
 
 const Reviews = () => {
   const [data, setData] = useState([]);
-
   const { movieId } = useParams();
-  console.log('movieId', movieId);
 
   useEffect(() => {
     const fetchMovieReviewsData = async () => {
       try {
         const data = await MoviesAPI.fetchMovieReviews(movieId);
         setData(data.results);
-        console.log('response fetchMovieReviews', data.results);
       } catch (err) {
         console.error(err);
       }

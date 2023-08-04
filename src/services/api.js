@@ -13,7 +13,6 @@ export const MoviesAPI = {
     const response = await fetch(
       `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`
     );
-    console.log('movieId in fetch by id', movieId);
     return await response.json();
   },
   async fetchMovieBySearch(searchTerm) {
@@ -35,5 +34,3 @@ export const MoviesAPI = {
     return await response.json();
   },
 };
-//API KEY
-//d18b4a9f72261e134a57a36252f3e89a

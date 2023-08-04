@@ -8,10 +8,7 @@ const MovieDetails = () => {
   const [data, setData] = useState([]);
   const location = useLocation();
   const backLinkHref = useRef(location.state?.from ?? '/');
-  console.log('location', location);
-  console.log('location.state', location.state);
   const { movieId } = useParams();
-  console.log('movieId', movieId);
 
   useEffect(() => {
     const fetchMovieByIdData = async () => {
@@ -55,7 +52,7 @@ const MovieDetails = () => {
           </li>
         </ul>
         <hr />
-        <Suspense fallback={<div>Loading subpage...</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
           <Outlet />
         </Suspense>
       </div>

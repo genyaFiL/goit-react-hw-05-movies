@@ -1,12 +1,12 @@
-// import React, { useRef } from 'react';
 import { RiArrowLeftSLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-// import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-const BackLink = ({ to, children }) => {
+const BackLink = ({ children }) => {
+  const location = useLocation();
   return (
     <div>
-      <Link to={to}>
+      <Link to={location.state?.from}>
         <button>
           <RiArrowLeftSLine size="16" /> {children}
         </button>
