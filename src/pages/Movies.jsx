@@ -1,20 +1,28 @@
 import React, { Suspense, useEffect, useState } from 'react';
-import { Link, Outlet, useLocation, useSearchParams } from 'react-router-dom';
+import { Outlet, useSearchParams } from 'react-router-dom';
 import { MoviesAPI } from 'services/api';
+import { Loader } from '../components/Loader';
+import { MovieList } from '../components/MovieList';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchMovieBySearchData = async () => {
       if (!query) return;
       try {
+        setIsLoading(true);
+        setError(null);
         const data = await MoviesAPI.fetchMovieBySearch(query);
         setData(data.results);
+        setIsLoading(false);
       } catch (err) {
-        console.error(err);
+        setError(err);
+        setIsLoading(false);
       }
     };
     fetchMovieBySearchData();
@@ -32,11 +40,11 @@ const Movies = () => {
   const handleSearchTermChange = ({ target: { value, name } }) => {
     setFormData({ ...formData, [name]: value });
   };
-  const location = useLocation();
+
   return (
     <>
       <h2>Movies page</h2>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
       <form onSubmit={handleSubmit}>
@@ -54,18 +62,9 @@ const Movies = () => {
         </button>
       </form>
       <hr />
-      <ul>
-        {data?.map(
-          ({ id, title }) =>
-            title && (
-              <li key={id}>
-                <Link to={`/movies/${id}`} state={{ from: location }}>
-                  {title}
-                </Link>
-              </li>
-            )
-        )}
-      </ul>
+      {isLoading && <Loader />}
+      {error && <p>Oops... Something went wrong...</p>}
+      {data.length > 0 && !isLoading && !error && <MovieList data={data} />}
     </>
   );
 };

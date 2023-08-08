@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { Container, Header, Link } from './Layout.styled';
+import { Loader } from './Loader';
 
 const Layout = () => {
-  const location = useLocation();
   return (
     <Container>
       <Header>
@@ -11,12 +11,10 @@ const Layout = () => {
           <Link to="/" end>
             Home
           </Link>
-          <Link to="/movies" state={{ from: location }}>
-            Movies
-          </Link>
+          <Link to="/movies">Movies</Link>
         </nav>
       </Header>
-      <Suspense fallback={<div>Loading page...</div>}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
     </Container>
