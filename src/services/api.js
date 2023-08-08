@@ -1,6 +1,8 @@
 const BASE_URL = `https://api.themoviedb.org/3`;
 const API_KEY = `d18b4a9f72261e134a57a36252f3e89a`;
 export const BASE_URL_IMAGE = `https://image.tmdb.org/t/p/w500`;
+export const DEFAULT_URL_IMG =
+  'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
 export const MoviesAPI = {
   async fetchMovies() {
