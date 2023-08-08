@@ -1,7 +1,8 @@
 import React, { Suspense, useEffect, useRef, useState } from 'react';
 import { Outlet, useParams, Link, useLocation } from 'react-router-dom';
 import { MoviesAPI } from 'services/api';
-import { MovieDetailsInfo } from './MovieDetailsInfo';
+
+import { MovieDetailsInfo } from 'components/MovieDetailsInfo';
 import { Loader } from '../components/Loader';
 import BackLink from '../components/BackLink';
 
