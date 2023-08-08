@@ -30,7 +30,7 @@ const Home = () => {
       <h2>Trending Today</h2>
       {isLoading && <Loader />}
       {error && <p>Oops... Something went wrong...</p>}
-      {data.length > 0 && <MovieList data={data} />}
+      {!isLoading && !error && data.length > 0 && <MovieList data={data} />}
     </>
   );
 };
