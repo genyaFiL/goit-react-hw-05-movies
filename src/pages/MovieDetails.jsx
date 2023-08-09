@@ -12,6 +12,7 @@ const MovieDetails = () => {
   const [error, setError] = useState(null);
   const location = useLocation();
   const backLinkHref = useRef(location.state?.from ?? '/');
+  console.log('backLinkHref: ', backLinkHref);
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -34,7 +35,7 @@ const MovieDetails = () => {
     <>
       <div>Movie Details page</div>
       <div>
-        <BackLink to={backLinkHref.current}>Go back</BackLink>
+        <BackLink state={backLinkHref.current}>Go back</BackLink>
         {isLoading && <Loader />}
         {error && <p>Oops... Something went wrong...</p>}
         {!isLoading && !error && (
