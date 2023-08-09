@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { BASE_URL_IMAGE, DEFAULT_URL_IMG } from 'services/api';
 
 export const MovieDetailsInfo = ({ data }) => {
+  console.log('data m l: ', data);
   return (
     <>
       <img
@@ -23,4 +25,17 @@ export const MovieDetailsInfo = ({ data }) => {
       ))}
     </>
   );
+};
+
+MovieDetailsInfo.propTypes = {
+  poster_path: PropTypes.string,
+  original_title: PropTypes.string,
+  vote_average: PropTypes.number,
+  overview: PropTypes.string,
+  genres: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ),
 };

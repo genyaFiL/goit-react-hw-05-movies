@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 
 export const MovieList = ({ data }) => {
   const location = useLocation();
-
+  console.log('data: ', data);
   return (
     <ul>
       {data?.map(
@@ -18,4 +19,13 @@ export const MovieList = ({ data }) => {
       )}
     </ul>
   );
+};
+
+MovieList.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+    })
+  ),
 };
