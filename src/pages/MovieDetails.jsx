@@ -44,14 +44,10 @@ const MovieDetails = () => {
             <p>Additional information</p>
             <ul>
               <li>
-                <Link to="cast" state={{ from: location.state?.from }}>
-                  cast
-                </Link>
+                <Link to="cast">cast</Link>
               </li>
               <li>
-                <Link to="reviews" state={{ from: location.state?.from }}>
-                  reviews
-                </Link>
+                <Link to="reviews">reviews</Link>
               </li>
             </ul>
             <hr />
