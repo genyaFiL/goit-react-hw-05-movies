@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { BASE_URL_IMAGE, DEFAULT_URL_IMG } from 'services/api';
 
 export const MovieDetailsInfo = ({ data }) => {
-  console.log('data m l: ', data);
   return (
     <>
       <img
