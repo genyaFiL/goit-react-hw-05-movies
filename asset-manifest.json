@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.b5320759.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.f09c1930.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.f3044aba.js",
     "static/js/415.7dec6132.chunk.js": "/goit-react-hw-05-movies/static/js/415.7dec6132.chunk.js",
     "static/js/979.8ac5c8ef.chunk.js": "/goit-react-hw-05-movies/static/js/979.8ac5c8ef.chunk.js",
-    "static/js/485.e2d6578c.chunk.js": "/goit-react-hw-05-movies/static/js/485.e2d6578c.chunk.js",
+    "static/js/485.028f0d58.chunk.js": "/goit-react-hw-05-movies/static/js/485.028f0d58.chunk.js",
     "static/js/597.4782cbed.chunk.js": "/goit-react-hw-05-movies/static/js/597.4782cbed.chunk.js",
     "static/js/681.63c0d0aa.chunk.js": "/goit-react-hw-05-movies/static/js/681.63c0d0aa.chunk.js",
     "static/js/230.06cb3ded.chunk.js": "/goit-react-hw-05-movies/static/js/230.06cb3ded.chunk.js",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.b5320759.css.map": "/goit-react-hw-05-movies/static/css/main.b5320759.css.map",
-    "main.f09c1930.js.map": "/goit-react-hw-05-movies/static/js/main.f09c1930.js.map",
+    "main.f3044aba.js.map": "/goit-react-hw-05-movies/static/js/main.f3044aba.js.map",
     "415.7dec6132.chunk.js.map": "/goit-react-hw-05-movies/static/js/415.7dec6132.chunk.js.map",
     "979.8ac5c8ef.chunk.js.map": "/goit-react-hw-05-movies/static/js/979.8ac5c8ef.chunk.js.map",
-    "485.e2d6578c.chunk.js.map": "/goit-react-hw-05-movies/static/js/485.e2d6578c.chunk.js.map",
+    "485.028f0d58.chunk.js.map": "/goit-react-hw-05-movies/static/js/485.028f0d58.chunk.js.map",
     "597.4782cbed.chunk.js.map": "/goit-react-hw-05-movies/static/js/597.4782cbed.chunk.js.map",
     "681.63c0d0aa.chunk.js.map": "/goit-react-hw-05-movies/static/js/681.63c0d0aa.chunk.js.map",
     "230.06cb3ded.chunk.js.map": "/goit-react-hw-05-movies/static/js/230.06cb3ded.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b5320759.css",
-    "static/js/main.f09c1930.js"
+    "static/js/main.f3044aba.js"
   ]
 }
